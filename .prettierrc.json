@@ -6,6 +6,12 @@
       "options": {
         "parser": "astro"
       }
+    },
+    {
+      "files": "*.{js,css,html}",
+      "options": {
+        "parser": "babel"
+      }
     }
   ]
 }

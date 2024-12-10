@@ -1,3 +1,9 @@
 *.md
 *.min.css
 *.min.js
+.editorconfig
+.eslintignore
+.gitignore
+.prettierignore
+.stylelintignore
+*.svg
