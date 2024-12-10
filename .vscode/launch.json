@@ -1,5 +1,14 @@
 {
   "version": "0.2.0",
+  "css.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "javascript.validate.enable": false,
+  "prettier.prettierPath": "node_modules/prettier",
   "configurations": [
     {
       "command": "./node_modules/.bin/astro dev",
