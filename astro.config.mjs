@@ -1,5 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import compress from 'vite-plugin-compression';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  vite: {
+    plugins: [compress()],
+    resolve: {
+      alias: {
+        "@assets": "/src/assets",
+        jquery: "jquery",
+      },
+    },
+  },
+});
