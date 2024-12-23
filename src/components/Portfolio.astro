@@ -1,7 +1,18 @@
 ---
+import type { MarkdownInstance } from 'astro';
 
+interface Frontmatter {
+  PageLinkExist: boolean;
+  portfolioUrl: string;
+  portfolioImg: string;
+  fvTitle: string;
+  fvText: string;
+}
+
+const allPosts = import.meta.glob<MarkdownInstance<Frontmatter>>('../pages/post/*.md', { eager: true });
+const posts = Object.values(allPosts);
+const baseUrl = import.meta.env.BASE_URL || '/';
 ---
-
 <div class="js-horizontal__01">
   <section class="home__portfolio js-horizontalArea01" id="home__portfolio">
     <div class="home__portfolio-container container">
@@ -13,7 +24,7 @@
         Portfolio<span
           class="main__subTitle wow fadeInUp"
           data-wow-duration="1s"
-          data-wow-delay="0.6s">2015-2021</span>
+          data-wow-delay="0.6s">2015-2024</span>
       </h2>
       <div class="js-horizontalArea__01">
         <div
@@ -21,6 +32,26 @@
           data-wow-duration="1s"
           data-wow-delay="0.8s"
         >
+            {posts.map((post) => {
+              const portfolioImgSrc = `${baseUrl}assets/images/top/${post.frontmatter.portfolioImg}.png`;
+
+              return (
+                <a
+                  class="home__portfolio-areaItem"
+                  href={
+                    post.frontmatter.PageLinkExist
+                    ? (post.url ? `/post/${post.url.replace(/^.*[\\\/]/, '').replace('.md', '')}` : '') // URLが存在する場合の処理
+                    : post.frontmatter.portfolioUrl
+                  }
+                  target="_blank"
+                >
+                  <figure class="home__portfolio-areaThum">
+                    <img src={portfolioImgSrc} alt={`${post.frontmatter.fvText}`} width="300" height="400" />
+                  </figure>
+                  <div class="home__portfolio-areaLink">{post.frontmatter.fvText}</div>
+                </a>
+              );
+            })}
         </div>
       </div>
     </div>
