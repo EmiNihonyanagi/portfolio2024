@@ -1,41 +1,50 @@
 ---
+const developTool = [
+  { name: "Visual Studio Code" },
+  { name: "GitHub" },
+  { name: "GitHub Desktop" },
+  { name: "Docker" },
+  { name: "Docker Desktop" },
+  { name: "Bitbucket" },
+  { name: "SourceTree" },
+  { name: "TablePlus" },
+  { name: "Zeplin" },
+  { name: "Figma" },
+  { name: "XD" },
+  { name: "Photoshop" },
+  { name: "Illustrator" },
+];
+const businessTool = [
+  { name: 'Backlog'},
+  { name: 'ChatWork'},
+  { name: 'Slack'},
+  { name: 'Teams'},
+  { name: 'Jira'},
+  { name: 'Asana'},
+  { name: 'Notion'},
+  { name: 'Excel'},
+  { name: 'Word'},
+  { name: 'PowerPoint'},
+]
 ---
 <section class="home__tool" id="home__tool">
   <div class="container">
     <h2 class="main__title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">Tool</h2>
     <dl class="home__tool-area wow fadeInUp" data-wow-duration=".5s" data-wow-delay="0.4s">
-      <dt class="home__tool-areaTitle">デザインツール</dt>
-      <dd class="home__tool-areaItem">Figma</dd>
-      <dd class="home__tool-areaItem">XD</dd>
-      <dd class="home__tool-areaItem">Photoshop</dd>
-      <dd class="home__tool-areaItem">Illustrator</dd>
-      <dd class="home__tool-areaItem">InDesign</dd>
-      <dd class="home__tool-areaItem">Sketch</dd>
-    </dl>
-    <dl class="home__tool-area wow fadeInUp" data-wow-duration=".5s" data-wow-delay="0.4s">
       <dt class="home__tool-areaTitle">制作ツール</dt>
-      <dd class="home__tool-areaItem">Visual Studio<br>Code </dd>
-      <dd class="home__tool-areaItem">GitHub</dd>
-      <dd class="home__tool-areaItem">GitHub Desktop</dd>
-      <dd class="home__tool-areaItem">Docker</dd>
-      <dd class="home__tool-areaItem">Docker Desktop</dd>
-      <dd class="home__tool-areaItem">Bitbucket</dd>
-      <dd class="home__tool-areaItem">SourceTree</dd>
-      <dd class="home__tool-areaItem">TablePlus</dd>
-      <dd class="home__tool-areaItem">Zeplin</dd>
+      {
+        developTool.map(item => (
+          <dd class="home__tool-areaItem">{item.name}</dd>
+        ))
+      }
     </dl>
     <dl class="home__tool-area wow fadeInUp" data-wow-duration=".5s" data-wow-delay="0.4s">
       <dt class="home__tool-areaTitle">ビジネスツール</dt>
-      <dd class="home__tool-areaItem">Backlog</dd>
-      <dd class="home__tool-areaItem">ChatWork</dd>
-      <dd class="home__tool-areaItem">Slack</dd>
-      <dd class="home__tool-areaItem">Teams</dd>
-      <dd class="home__tool-areaItem">Jira</dd>
-      <dd class="home__tool-areaItem">Asana</dd>
-      <dd class="home__tool-areaItem">Notion</dd>
-      <dd class="home__tool-areaItem">Excel</dd>
-      <dd class="home__tool-areaItem">Word</dd>
-      <dd class="home__tool-areaItem">PowerPoint</dd>
+      {
+        businessTool.map(item => (
+          <dd class="home__tool-areaItem">{item.name}</dd>
+        ))
+      }
     </dl>
   </div>
 </section>
