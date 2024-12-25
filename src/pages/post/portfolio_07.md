@@ -5,7 +5,7 @@ portfolioImg: "portfolio_dummy"
 portfolioTitle: "二本柳英美の制作実績 美容師コミュニティアプリ開発"
 description: "Emi Nihonyanagi Portfolioサイト 美容師コミュニティアプリ開発の案件内容"
 fvTitle: "美容師コミュニティアプリ開発"
-fvText: "オウンドメディアサイト"
+fvText: "美容師コミュニティアプリ開発"
 ---
 <section class="page__portfolio">
   <div class="page__portfolio-detail container">

@@ -4,6 +4,7 @@ import compress from 'vite-plugin-compression';
 
 export default defineConfig({
   vite: {
+    trailingSlash: "always",
     plugins: [compress()],
     resolve: {
       alias: {
