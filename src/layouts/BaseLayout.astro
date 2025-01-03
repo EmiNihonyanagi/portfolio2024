@@ -6,6 +6,7 @@ import Loading from "../components/Loading.astro";
 
 const { pageTitle , Description } = Astro.props;
 const baseUrl = import.meta.env.BASE_URL || '/';
+const currentPath = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
@@ -31,9 +32,9 @@ const baseUrl = import.meta.env.BASE_URL || '/';
     <meta name="robots" content="noindex">
 
   </head>
-  <body id="top">
+  <body id={currentPath === '/' ? 'top' : ''}>
     <div ontouchstart="">
-      <Loading />
+      {currentPath === '/' ? <Loading /> : ''}
       <Header />
       <slot />
       <Footer />

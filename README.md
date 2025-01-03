@@ -49,3 +49,5 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ### prettier setting
 npm install --save-dev prettier prettier-plugin-astro
+### microcms-js-sdk setting
+npm install microcms-js-sdk

@@ -3,8 +3,9 @@ import { defineConfig } from 'astro/config';
 import compress from 'vite-plugin-compression';
 
 export default defineConfig({
+  site: 'https://portfolio.twowillowsdesign.com/',
+  trailingSlash: "always",
   vite: {
-    trailingSlash: "always",
     plugins: [compress()],
     resolve: {
       alias: {
