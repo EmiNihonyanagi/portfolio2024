@@ -7,6 +7,8 @@ let skill_item = [
   {title: 'SCSS', year: '8'},
   {title: 'Node.js', year: '3'},
   {title: 'Docker', year: '3'},
+  {title: 'Next', year: '' , text: '学習中'},
+  {title: 'Astro', year: '' , text: '学習中'},
 ];
 ---
 <section class="home__skill" id="home__skill">
@@ -16,12 +18,18 @@ let skill_item = [
       {skill_item.map((item) => (
         <li class="home__skill-areaItem wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
           <div class="home__skill-areaTitle">{item.title}</div>
-          <div class="home__skill-areaYear">
-            {Array.from({length: Number(item.year)}).map((_, index) => (
-              <span class="home__skill-areaYearBlock animate__target">■</span>
-            ))}
-            <span class="home__skill-areaYearText animate__target">{item.year} 年</span>
-          </div>
+          {item.year ? (
+            <div class="home__skill-areaYear">
+              {Array.from({length: Number(item.year)}).map((_, index) => (
+                <span class="home__skill-areaYearBlock animate__target">■</span>
+              ))}
+              <span class="home__skill-areaYearText animate__target">{item.year} 年</span>
+            </div>
+          ) : (
+            <div class="home__skill-areaYear">
+              <span class="home__skill-areaYearText animate__target">{item.text}</span>
+            </div>
+          )}
         </li>
       ))}
     </ul>
