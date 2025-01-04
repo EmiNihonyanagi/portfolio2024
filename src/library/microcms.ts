@@ -14,6 +14,8 @@ export type Blog = {
   PageLinkExist: boolean;
   portfolioUrl: string;
   portfolioTitle: string;
+  description: string;
+  contents: string;
   portfolioImg: {
     url: string;
     height: number;
