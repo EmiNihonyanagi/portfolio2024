@@ -1,0 +1,56 @@
+/*====================================================================
+portfolio
+====================================================================*/
+.page__portfolio {
+  margin-bottom: 8rem;
+  @include u-mqMin {
+    margin-bottom: 15rem;
+  }
+  &-detail {
+    max-width: 96rem;
+    width: 80%;
+
+  }
+  &-detailItem {
+    margin-bottom: 5rem;
+    @include u-mqMin {
+      margin-bottom: 10rem;
+    }
+  }
+  &-box {
+    background: $lightGray;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    @include u-mqMin {
+      padding: 1.5rem 3rem;
+    }
+
+  }
+  &-list {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+
+  }
+  &-listItem {
+    padding-left: 1em;
+    position: relative;
+    &::before {
+      content: "・";
+      display: block;
+      position: absolute;
+      left: 0;
+    }
+    &.myWork {
+      &::before {
+        content: "○";
+        left: -.5rem;
+      }
+    }
+
+  }
+  &-notes {
+    font-size: 1.4rem;
+
+  }
+}

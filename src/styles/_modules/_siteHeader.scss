@@ -1,0 +1,147 @@
+/*====================================================================
+siteHeader
+====================================================================*/
+.siteHeader {
+  position: relative;
+
+  &__button {
+    right: 1.5rem;
+    top: 1.5rem;
+    position: fixed;
+    cursor: pointer;
+    z-index: 2;
+    @include u-mqMin {
+      right: 3rem;
+      top: 3rem;
+    }
+    &::before {
+      content: "";
+      display: block;
+      width: 5rem;
+      height: 5rem;
+      background: rgba(202, 212, 227, 0.9);
+      border-radius: 50%;
+      z-index: 1;
+      transition: all .6s;
+      transform: scale(1);
+      box-shadow: 0px 0px 16px -6px rgba(255,255,255,0.9);
+      @include u-mqMin {
+        width: 7rem;
+        height: 7rem;
+      }
+    }
+    &.is-open {
+      &::before {
+        transition: all .6s;
+        transform: scale(13);
+        -webkit-transform: scale(13);
+        -moz-transform: scale(13);
+        -ms-transform: scale(13);
+        -o-transform: scale(13);
+        @include u-mqMin {
+          transform: scale(11);
+          -webkit-transform: scale(11);
+          -moz-transform: scale(11);
+          -ms-transform: scale(11);
+          -o-transform: scale(11);
+        }
+      }
+    }
+  }
+  &__button-text {
+    position: fixed;
+    right: 2rem;
+    top: 3rem;
+    z-index: 3;
+    font-size: 1.6rem;
+    color: $white;
+    @include u-trs;
+    @include u-mqMin {
+      right: 4rem;
+      top: 5rem;
+      font-size: 2rem;
+    }
+    &::before {
+      content: "Menu";
+    }
+    .is-open & {
+      transform: scale(1.5);
+      -webkit-transform: scale(1.5);
+      -moz-transform: scale(1.5);
+      -ms-transform: scale(1.5);
+      -o-transform: scale(1.5);
+      right: 7.5rem;
+      @include u-trs;
+      @include u-mqMin {
+        right: 10rem;
+      }
+      &::before {
+        content: "× Close";
+      }
+    }
+
+  }
+  &__nav {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    right: 2rem;
+    top: 6rem;
+    max-width: 12rem;
+    width: 100%;
+    z-index: 3;
+    @include u-mqMin {
+      right: 3rem;
+      top: 10rem;
+      max-width: 15rem;
+    }
+    &.is-active {
+      opacity: 1;
+      pointer-events: all;
+      @include u-trs;
+    }
+
+  }
+  &__navList {
+    list-style: none;
+    padding-left: 0;
+
+  }
+  &__navList-item {
+    opacity: 0;
+    font-size: 2.6rem;
+    line-height: 1.8;
+    @include u-mqMin {
+      font-size: 3rem;
+    }
+    .is-active & {
+      animation-name:fadeInLeft;
+      animation-duration: 0.8s;
+      animation-fill-mode:forwards;
+      &:nth-child(1) {
+        animation-delay: 0s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+      &:nth-child(5) {
+        animation-delay: 0.8s;
+      }
+      &:nth-child(6) {
+        animation-delay: 1s;
+      }
+    }
+    a {
+      color: $white;
+      @include u-trsPC;
+
+    }
+
+  }
+}

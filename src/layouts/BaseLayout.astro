@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Loading from "../components/Loading.astro";
+import "@/styles/style.scss";
 //import "../styles/global.css";
 
 const { pageTitle , Description } = Astro.props;
@@ -23,7 +24,6 @@ const currentPath = Astro.url.pathname;
     <!-- Styles-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" media="print,screen" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
-    <link rel="stylesheet" media="print,screen" href=`${baseUrl}assets/css/style.css`>
     <!-- WEB Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

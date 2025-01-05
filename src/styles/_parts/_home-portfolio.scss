@@ -1,0 +1,109 @@
+/*====================================================================
+home__portfolio
+====================================================================*/
+.home__portfolio{
+  position: relative;
+  padding-top: 5rem!important;
+  overflow: hidden;
+  width: 100%;
+  @include u-mqMin {
+    padding-top: 10rem!important;
+  }
+  &-container {
+    display: flex;
+    min-height: 40rem;
+    @include u-mqMin {
+      height: 100vh;
+    }
+
+  }
+  &-area {
+    position: absolute;
+    left: 10rem;
+    top: 10rem;
+    padding-top: 10rem;
+    display: flex;
+    min-width: 150rem;
+    @include u-mqMin {
+      top: 0;
+      left: 80rem;
+      min-width: 300rem;
+    }
+  }
+  &-areaItem {
+    display: block;
+    max-width: 100%;
+    width: 15rem;
+    position: relative;
+    cursor: pointer;
+    margin: 0 1.5rem;
+    @include u-mqMin {
+      width: 30rem;
+    }
+
+  }
+  &-areaThum {
+    img {
+      width: 100%;
+      height: auto;
+
+    }
+
+  }
+  &-areaLink {
+    @include u-text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    background: rgba(225, 225, 225, 0.5);
+    left: 0;
+    bottom: 4rem;
+    width: 100%;
+    min-height: 7rem;
+    padding: 1.5rem 1.5rem 1rem;
+    z-index: 1;
+    border-radius: 50%;
+    opacity: 0;
+
+    @include u-trs;
+    @include u-mqMin {
+      height: 10rem;
+    }
+    @media (hover: hover) {
+      .home__portfolio-areaItem:hover & {
+        opacity: 1;
+        border-radius: 0;
+
+        @include u-trs;
+        color: $black;
+        text-decoration: none;
+        width: 100%;
+        backdrop-filter: blur(8px);
+      }
+      @media (hover: none) {
+        .home__portfolio-areaItem:active & {
+          opacity: 1;
+          border-radius: 0;
+
+          @include u-trs;
+          color: $black;
+          text-decoration: none;
+          width: 100%;
+          backdrop-filter: blur(8px);
+        }
+
+      }
+    }
+
+
+  }
+  &-areaLabel {
+    font-weight: bold;
+    text-align: right;
+    width: 100%;
+
+  }
+
+}

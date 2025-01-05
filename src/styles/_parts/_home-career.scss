@@ -1,0 +1,131 @@
+/*====================================================================
+home__career
+====================================================================*/
+.home__career {
+  position: relative;
+  margin-top: 5rem;
+  padding: 8rem 0 5rem;
+  width: 100%;
+  overflow: hidden;
+  background: rgb(202,212,227);
+  background: radial-gradient(circle, rgba(202,212,227,1) 0%, rgba(227,202,218,1) 100%);
+  background-size: 200% 200%;
+  animation: bg_gradient 10s ease infinite;
+  -webkit-animation: bg_gradient 10s ease infinite;
+  @include u-mqMin  {
+    margin-top: 10rem;
+    padding: 10rem 0;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 17.5rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: $white;
+    @include u-mqMin {
+      top: 32.5rem;
+    }
+  }
+  .main__title {
+    color: $white;
+  }
+
+  &-area {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    min-width: 150rem;
+  }
+  &-areaItem {
+    position: relative;
+    min-width: 15rem;
+    padding: 5rem 1.5rem 0 1.5rem;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $white;
+    // opacity: 0;
+    @include u-trs;
+    height: 100%;
+    @include u-mqMin {
+      min-width: 21rem;
+    }
+    &.is-animate {
+      animation-name:fadeIn;
+      animation-duration:1s;
+      animation-fill-mode:forwards;
+      &:nth-child(1) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.8s;
+      }
+      &:nth-child(3) {
+        animation-delay: 1.2s;
+      }
+      &:nth-child(4) {
+        animation-delay: 1.6s;
+      }
+      &:nth-child(5) {
+        animation-delay: 2s;
+      }
+      &:nth-child(6) {
+        animation-delay: 2.4s;
+      }
+      &:nth-child(7) {
+        animation-delay: 2.8s;
+      }
+      &:nth-child(8) {
+        animation-delay: 3.2s;
+      }
+      &:nth-child(9) {
+        animation-delay: 3.6s;
+      }
+      &:nth-child(10) {
+        animation-delay: 4s;
+      }
+    }
+
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      background: $white;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform:translateX(-50%);
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      -webkit-transform:translateX(-50%);
+      -moz-transform:translateX(-50%);
+      -ms-transform:translateX(-50%);
+      -o-transform:translateX(-50%);
+      box-shadow: 0 1px 10px rgba(255, 255, 255, 0.6);
+    }
+
+  }
+  &-areaYear {
+    font-size: 3rem;
+    line-height: 1;
+    min-height: 12rem;
+
+  }
+  &-areaCompany {
+    margin-top: 1rem;
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1.4;
+
+  }
+  &-areaText {
+
+  }
+}

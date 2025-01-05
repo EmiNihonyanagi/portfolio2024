@@ -1,0 +1,110 @@
+/*====================================================================
+home__skill
+====================================================================*/
+.home__skill {
+  padding: 5rem 0;
+  @include u-mqMin {
+    padding: 10rem 0;
+  }
+  &-area {
+    padding-left: 0;
+    list-style: none;
+
+  }
+  &-areaItem {
+    display: flex;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    @include u-mqMin {
+      margin-bottom: 1rem;
+    }
+
+  }
+  &-areaTitle {
+    font-size: 2rem;
+    min-width: 26rem;
+    @include u-mqMin {
+      font-size: 3rem;
+    }
+
+  }
+  &-areaYear {
+
+
+  }
+
+  span {
+    opacity: 0;
+    @include u-trs;
+    &.is-animate {
+      animation-name:fadeIn;
+      animation-duration:0.2s;
+      animation-fill-mode:forwards;
+      &:nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.6s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.9s;
+      }
+      &:nth-child(4) {
+        animation-delay: 1.2s;
+      }
+      &:nth-child(5) {
+        animation-delay: 1.5s;
+      }
+      &:nth-child(6) {
+        animation-delay: 1.8s;
+      }
+      &:nth-child(7) {
+        animation-delay: 2.1s;
+      }
+      &:nth-child(8) {
+        animation-delay: 2.4s;
+      }
+      &:nth-child(9) {
+        animation-delay: 2.7s;
+      }
+      &:nth-child(10) {
+        animation-delay: 3s;
+      }
+      &:nth-child(11) {
+        animation-delay: 3.3s;
+      }
+      &:nth-child(12) {
+        animation-delay: 3.6s;
+      }
+      &:nth-child(13) {
+        animation-delay: 3.9s;
+      }
+    }
+
+  }
+  &-areaYearBlock {
+    display: inline-block;
+    color: $lightGray;
+    position: relative;
+    padding: 0 0.5rem;
+
+
+    &::before {
+      content: "";
+      width: 1.2em;
+      height: 1.5em;
+      background: $lightGray;
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -0.5rem;
+      z-index: 1;
+    }
+
+  }
+  &-areaYearText {
+    font-size: 1.4rem;
+    padding-left: 1rem;
+
+  }
+}

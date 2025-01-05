@@ -1,0 +1,68 @@
+/*====================================================================
+home__fv
+====================================================================*/
+.home__fv {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  @include u-mqMin {
+    min-height: 70rem;
+  }
+
+  &-area {
+    display: inline-block;
+    text-align: center;
+    opacity: 0;
+    max-width: 50rem;
+    padding: 0 1.5rem;
+    @include u-trs;
+    &.is-show {
+      @include u-trs;
+      animation-name:fadeIn;
+      animation-duration:2s;
+      animation-fill-mode:forwards;
+    }
+
+  }
+  &-areaName {
+    color: $gray;
+    font-size: 4rem;
+    @include u-mqMin {
+      font-size: 6rem;
+    }
+    .is-show & {
+      @include u-trs;
+      animation-name:fadeInUp;
+      animation-duration:2s;
+      animation-fill-mode:forwards;
+    }
+  }
+  &-areaLine {
+    opacity: 0;
+    &.is-animate {
+      opacity: 1;
+    }
+  }
+  &-areaText {
+    color: $gray;
+    font-size: 3rem;
+    text-align: right;
+
+    .is-show & {
+      @include u-trs;
+      animation-name:fadeInUp;
+      animation-duration:2s;
+      animation-fill-mode:forwards;
+    }
+
+  }
+}
