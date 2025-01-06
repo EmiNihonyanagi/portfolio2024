@@ -1,13 +1,59 @@
 ---
+//microCMS呼び出し
+import { getBlogs } from "../library/microcms";
+const response = await getBlogs({
+  fields: ['slug', 'PageLinkExist', 'portfolioUrl', 'portfolioImg' ,'portfolioTitle', 'categories']
+});
 
+const baseUrl = import.meta.env.BASE_URL || '/';
 ---
 <div class="js-horizontal__01">
-    <section class="home__portfolio js-horizontalArea01" id="home__portfolio">
-        <div class="home__portfolio-container container">
-            <h2 class="main__title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">Portfolio<span class="main__subTitle wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s">2015-2021</span></h2>
-            <div class="js-horizontalArea__01">
-                <div class="home__portfolio-area js-horizontalArea__item01 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s"></div>
-            </div>
+  <section class="home__portfolio js-horizontalArea01" id="home__portfolio">
+    <div class="home__portfolio-container container">
+      <h2
+        class="main__title wow fadeInUp"
+        data-wow-duration="1s"
+        data-wow-delay="0.4s"
+      >
+        Portfolio<span
+          class="main__subTitle wow fadeInUp"
+          data-wow-duration="1s"
+          data-wow-delay="0.6s">2015-2024</span>
+      </h2>
+      <div class="js-horizontalArea__01">
+        <div
+          class="home__portfolio-area js-horizontalArea__item01 wow fadeInUp"
+          data-wow-duration="1s"
+          data-wow-delay="0.8s"
+        >
+            {
+            response.contents.map((content: any) => (
+              <a
+                class="home__portfolio-areaItem"
+                href={
+                  content.PageLinkExist
+                  ? `${baseUrl}post/${content.slug}/`
+                  : content.portfolioUrl
+                }
+                target="_blank"
+              >
+                <figure class="home__portfolio-areaThum">
+                  <img
+                  src={content.portfolioImg?.url || `${baseUrl}assets/images/top/portfolio_dummy.png`}
+                  alt={content.portfolioTitle}
+                  width={content.portfolioImg?.width || 300}
+                  height={content.portfolioImg?.height || 400} />
+                </figure>
+                {content.categories?.map((category: any) => (
+                  <div class="home__portfolio-areaLink">
+                    {category.name}
+                  </div>
+                ))}
+              </a>
+            ))
+          }
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 </div>

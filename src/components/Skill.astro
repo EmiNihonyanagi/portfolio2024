@@ -1,0 +1,37 @@
+---
+let skill_item = [
+  {title: 'HTML', year: '12'},
+  {title: 'CSS', year: '12'},
+  {title: 'WordPress', year: '10'},
+  {title: 'JavaScript/jQuery', year: '12'},
+  {title: 'SCSS', year: '8'},
+  {title: 'Node.js', year: '3'},
+  {title: 'Docker', year: '3'},
+  {title: 'Next', year: '' , text: '学習中'},
+  {title: 'Astro', year: '' , text: '学習中'},
+];
+---
+<section class="home__skill" id="home__skill">
+  <div class="container">
+    <h2 class="main__title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">Skill</h2>
+    <ul class="home__skill-area">
+      {skill_item.map((item) => (
+        <li class="home__skill-areaItem wow fadeIn" data-wow-duration="1s" data-wow-delay="0.4s">
+          <div class="home__skill-areaTitle">{item.title}</div>
+          {item.year ? (
+            <div class="home__skill-areaYear">
+              {Array.from({length: Number(item.year)}).map((_, index) => (
+                <span class="home__skill-areaYearBlock animate__target">■</span>
+              ))}
+              <span class="home__skill-areaYearText animate__target">{item.year} 年</span>
+            </div>
+          ) : (
+            <div class="home__skill-areaYear">
+              <span class="home__skill-areaYearText animate__target">{item.text}</span>
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

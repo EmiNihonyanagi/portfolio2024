@@ -1,0 +1,16 @@
+@mixin u-text($color: $black, $size: 1.6rem) {
+  font-family: $Roboto;
+  color: $color;
+  font-size: $size;
+  font-weight: 400;
+
+  // Liquid
+  @include u-mqMax() {
+
+  }
+
+  // SP
+  @include u-mqMax($maxW: $windowSP){
+    font-size: 1.6rem;
+  }
+}

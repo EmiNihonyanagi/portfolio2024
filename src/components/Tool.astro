@@ -1,0 +1,50 @@
+---
+const developTool = [
+  { name: "Visual Studio Code" },
+  { name: "GitHub" },
+  { name: "GitHub Desktop" },
+  { name: "Docker" },
+  { name: "Docker Desktop" },
+  { name: "Bitbucket" },
+  { name: "SourceTree" },
+  { name: "TablePlus" },
+  { name: "Zeplin" },
+  { name: "Figma" },
+  { name: "XD" },
+  { name: "Photoshop" },
+  { name: "Illustrator" },
+];
+const businessTool = [
+  { name: 'Backlog'},
+  { name: 'ChatWork'},
+  { name: 'Slack'},
+  { name: 'Teams'},
+  { name: 'Jira'},
+  { name: 'Asana'},
+  { name: 'Notion'},
+  { name: 'Excel'},
+  { name: 'Word'},
+  { name: 'PowerPoint'},
+]
+---
+<section class="home__tool" id="home__tool">
+  <div class="container">
+    <h2 class="main__title wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s">Tool</h2>
+    <dl class="home__tool-area wow fadeInUp" data-wow-duration=".5s" data-wow-delay="0.4s">
+      <dt class="home__tool-areaTitle">制作ツール</dt>
+      {
+        developTool.map(item => (
+          <dd class="home__tool-areaItem">{item.name}</dd>
+        ))
+      }
+    </dl>
+    <dl class="home__tool-area wow fadeInUp" data-wow-duration=".5s" data-wow-delay="0.4s">
+      <dt class="home__tool-areaTitle">ビジネスツール</dt>
+      {
+        businessTool.map(item => (
+          <dd class="home__tool-areaItem">{item.name}</dd>
+        ))
+      }
+    </dl>
+  </div>
+</section>
