@@ -1,0 +1,31 @@
+{
+  "name": "portfolio2024",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format-html": "prettier --write dist_tmp/**/*.html"
+  },
+  "dependencies": {
+    "@prettier/plugin-php": "^0.22.2",
+    "astro": "^5.0.3",
+    "eslint": "^9.16.0",
+    "gsap": "^3.12.5",
+    "locomotive-scroll": "^4.1.4",
+    "microcms-js-sdk": "^3.1.2",
+    "sass": "^1.83.1",
+    "stylelint": "^16.11.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-recommended": "^14.0.1",
+    "stylelint-order": "^6.0.4",
+    "vivus": "^0.4.6"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1"
+  }
+}
